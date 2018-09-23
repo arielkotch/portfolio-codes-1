@@ -5,6 +5,7 @@ define(['angular', './services/helper', './services/playRoutes', './filters', '.
     'angular-file-upload',
 	'./directives/building_info',
 	'./directives/bar',
+  './directives/negative',
 	'./directives/required',
 	'./directives/files'
 	],
@@ -14,5 +15,3 @@ define(['angular', './services/helper', './services/playRoutes', './filters', '.
   return angular.module('benchmark.common', ['common.helper', 'common.playRoutes', 'common.filters',
     'common.semantic', 'common.PopoverService', 'ngFileUpload']);
 });
-
-

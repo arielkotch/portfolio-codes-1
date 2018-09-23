@@ -1,3 +1,6 @@
+
+//UNDER DEVELOPMENT
+
 /**
  * A building property directive
  * changes form inputs based on property type
@@ -95,17 +98,29 @@ define(['angular', 'highcharts','maalkaflags', './main'], function(angular) {
         var series = [];
         var colors = ['#1F2C5C', '#3F58CE', '#5D70D4', '#08B4BB', '#6BD2D6', '#06A1F9', '#0579BB', '#F5B569', '#EB885C', '#D4483D', '#64467D', '#9A6ECE','#06AED5','#564787','#FDE74C'];
         var index;
+        function pattern(patternColor) {
+            return {
+                pattern: {
+                    path: {
+                        d: 'M 0 0 L 6 6 M 5 -1 L 7 1 M -1 5 L 1 7',
+                        strokeWidth: 3
+                    },
+                    height: 6,
+                    width: 6,
+                    r: 4,
+                    color: patternColor
+                }
+            };
+        }
         function createSeries() {
           index = 0;
-
           for (var propEnergy in $scope.data) {
             if (propEnergy !== 'net') {
-
               var modelEnergy = {
                 name: propEnergy,
                 id: propEnergy+$scope.options.id,
                 data: $scope.data[propEnergy],
-                color: colors[index++],
+                color:pattern(colors[index++]),
                 borderWidth: 0
               };
             if($scope.options.id==='_eui'){

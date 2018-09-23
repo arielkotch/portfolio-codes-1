@@ -223,6 +223,7 @@ define(['angular'], function() {
 
         });
     };
+
       function testPerformance(name,func,params){
         var t0 = performance.now();
         func(params);   // <---- The function you're measuring time for
